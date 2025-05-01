@@ -55,7 +55,8 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/pokachtoxz/**").hasRole("Department_Head")
+                        .requestMatchers("/users/**").hasRole("Head")
+                        .requestMatchers("/reports/**").hasRole("Head")
                         .anyRequest().authenticated())
                 .formLogin(AbstractAuthenticationFilterConfigurer::permitAll)
                 .httpBasic(Customizer.withDefaults())

@@ -43,10 +43,935 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "getallattendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsCIsInJvbGUiOiJFbXBsb3llZSIsImF1dGhvcml0aWVzIjpbIkVtcGxveWVlIl0sImlhdCI6MTc0NjExMjcwOSwiZXhwIjoxNzQ2MTcyNzA5fQ.qJkvZhUk_Es6PiGUEsM3pQbxU3x2Wn07K09PWVASB-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/attendance/all",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AttendanceCreate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsCIsInJvbGUiOiJFbXBsb3llZSIsImF1dGhvcml0aWVzIjpbIkVtcGxveWVlIl0sImlhdCI6MTc0NjExMjcwOSwiZXhwIjoxNzQ2MTcyNzA5fQ.qJkvZhUk_Es6PiGUEsM3pQbxU3x2Wn07K09PWVASB-c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employee_name\": \"Михаил Дречмук\",\r\n  \"employee_position\": \"Employee\",\r\n  \"timeIn\": \"2023-05-01T09:00:00\",\r\n  \"timeOut\": \"2023-05-01T18:00:00\",\r\n  \"workHours\": 8.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/attendance/create",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getReports",
 			"request": {
 				"method": "GET",
 				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CreateReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"creator_username\": \"леха1\",\r\n  \"reportType\": \"Ежемесячный отчет\",\r\n  \"creationDate\": \"2023-05-01T14:30:00\",\r\n  \"filePath\": \"/reports/monthly_report_202305.pdf\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reports",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"creator_username\": \"леха1\",\r\n  \"reportType\": \"Ежемесячный отfdfdчет\",\r\n  \"creationDate\": \"2023-05-01T14:30:00\",\r\n  \"filePath\": \"/reports/dfdfmonthly_report_202305.pdf\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/reports/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/reports/13",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"reports",
+						"13"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateEmployee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"леха\",\r\n  \"name\": \"Михаил Дречмук\",\r\n  \"position\": \"Главный по базару\",\r\n  \"hourlyRate\": 0.5,\r\n  \"bankAccount\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PutEmployee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"леха1\",\r\n  \"name\": \"Михаил Дречмук\",\r\n  \"position\": \"Главный по базару\",\r\n  \"hourlyRate\": 0.75,\r\n  \"bankAccount\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/employees/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmployee",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getEmployees",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmployeesbyid",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/employees/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"employees",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateAttendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"employee_name\": \"Михаил Дречмук\",\r\n  \"employee_position\": \"Employee\",\r\n  \"timeIn\": \"2023-03-01T09:00:00\",\r\n  \"timeOut\": \"2023-05-01T19:45:00\",\r\n  \"workHours\": 8.5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/attendance/update/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteAttendance",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiLQu9C10YXQsDEiLCJyb2xlIjoiSGVhZCIsImF1dGhvcml0aWVzIjpbIkhlYWQiXSwiaWF0IjoxNzQ2MTEzMzg4LCJleHAiOjE3NDYxNzMzODh9.GYw1qfS3Uu9PBtQ2iTtSZlLeP2I2zMwk3cWd3j1i7Uo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/attendance/delete/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Deduction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/deductions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID Deduction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/deductions/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"deductions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Deduction",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/deductions",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"deductions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Deduction",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/deductions/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"deductions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Deduction",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/deductions/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"deductions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Payroll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/payrolls",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"payrolls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID Payroll",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/payrolls/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"payrolls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Payroll",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/payrolls",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"payrolls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Payroll",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/payrolls/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"payrolls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Payroll",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/payrolls/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"payrolls",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Bonus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/bonuses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bonuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID Bonus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/bonuses/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bonuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Bonus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bonuses",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bonuses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Bonus",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/bonuses/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bonuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Bonus",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/bonuses/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"bonuses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Complaint",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/complaints",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complaints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get By ID Complaint",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/complaints/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complaints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Complaint",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/complaints",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complaints"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Complaint",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/api/complaints/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complaints",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Complaint",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/api/complaints/1",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"api",
+						"complaints",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}
